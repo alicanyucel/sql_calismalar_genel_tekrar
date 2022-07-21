@@ -1,44 +1,44 @@
---select kullanımı kayıt getirme
+--select kullanÃ½mÃ½ kayÃ½t getirme
 --select * from Products
---yineelnen kayıtları tek kayıt olarak getir
+--yineelnen kayÃ½tlarÃ½ tek kayÃ½t olarak getir
 --select distinct ContactTitle from Customers
---where filtreleme yapar delete,update ve select operasyonlarında kullanılır
+--where filtreleme yapar delete,update ve select operasyonlarÃ½nda kullanÃ½lÃ½r
 --Select ContactName,ContactTitle from Customers where City='Berlin'
---not ın syntax verdiğimiz değerler dısında klan değerleri listelemek için
+--not Ã½n syntax verdiÄ‘imiz deÄ‘erler dÃ½sÃ½nda klan deÄ‘erleri listelemek iÃ§in
 --Select * from Products where ProductName Not IN('pear')
---ın syntax verdiğimiz değerlerw gore listeleme yapar
+--Ã½n syntax verdiÄ‘imiz deÄ‘erlerw gore listeleme yapar
 --Select * from Customers where CompanyName In('Du monde entier')
---and de 2 değer doğruysa çalışır
+--and de 2 deÄ‘er doÄ‘ruysa Ã§alÃ½Å£Ã½r
 --Select * from Customers where Country='Germany' And City='Berlin'
---or syntax biri doğruysa doğrudur
+--or syntax biri doÄ‘ruysa doÄ‘rudur
 --Select * from Customers where City='Berlin' Or City='Madrid'
---oder by kullanımı sıralamak miçin kullanılır default olarak artan sırada sıralar
+--oder by kullanÃ½mÃ½ sÃ½ralamak miÃ§in kullanÃ½lÃ½r default olarak artan sÃ½rada sÃ½ralar
 --Select * from Customers order By Country
---order by desc kullanımı azalan sırada sıralar z-a aya doğru dusunun
+--order by desc kullanÃ½mÃ½ azalan sÃ½rada sÃ½ralar z-a aya doÄ‘ru dusunun
 --Select CustomerID from Customers order by CustomerID Desc
---insert into kayıt eklemek için kullanılır
+--insert into kayÃ½t eklemek iÃ§in kullanÃ½lÃ½r
 --INSERT INTO Customers (City) Values ('Norway')
--- IS NOT NULL BOŞ OLMAYAN DEĞERLERİ Listelemek için kullanılır
+-- IS NOT NULL BOÅ¢ OLMAYAN DEÄERLERÃ Listelemek iÃ§in kullanÃ½lÃ½r
 --Select ContactName,Address from Customers where Address IS NOT NULL
---ıs null ise boş kayıtarI TEST ETMEK için kullanılır
+--Ã½s null ise boÅ£ kayÃ½tarI TEST ETMEK iÃ§in kullanÃ½lÃ½r
 --select ContactName From Customers where Address IS NULL-
 --Update Customers Set ContactName='Maria Anders' where Country='Germany'
---sql delete kullanımı
+--sql delete kullanÃ½mÃ½
 --Delete from Customers where CompanyName='Around the Horn'
---belli bir limite göre kayıt listeleme selct top kullanımı
+--belli bir limite gÃ¶re kayÃ½t listeleme selct top kullanÃ½mÃ½
 --Select top 22 CustomerId from Customers 
---kayıtların belli bir yuzdesini gosterme
+--kayÃ½tlarÃ½n belli bir yuzdesini gosterme
 --Select top 50 percent * from Customers
---MİN  en kucuk değer bulma VE MAX en buyuk değer bulma
+--MÃN  en kucuk deÄ‘er bulma VE MAX en buyuk deÄ‘er bulma
 --Select Min(UnitPrice) as fiyat from Products
 --Select MAX(UnitPrice) as Maxfiayt from Products
---count satır sayısını doner
+--count satÃ½r sayÃ½sÃ½nÃ½ doner
 --Select Count(UnitsInStock) from Products 
---avg ortalamasını alır
+--avg ortalamasÃ½nÃ½ alÃ½r
 --Select AVG(UnitPrice) from Products
---sum sutunları toplar
+--sum sutunlarÃ½ toplar
 --SELECT SUM(UnitPrice) from Products
---SQL LIKE arama yapar yuzde işaraetinn başında arasında ve sonunda olmasına gore değişir
+--SQL LIKE arama yapar yuzde iÅ£araetinn baÅ£Ã½nda arasÃ½nda ve sonunda olmasÃ½na gore deÄ‘iÅ£ir
 --Select * from Products where ProductName like  'a%'
 --Select * from Products where ProductName like  '%a'
 --Select * from Products WHERE ProductName Like 'chang%'
@@ -48,3 +48,16 @@ AS
 SELECT * FROM Products
 EXEC list
 */
+EXEC list*/
+--In OperatoruÃ§oklu or koÅŸullarÄ± belirtmek iÃ§in kullanÄ±lÄ±r joÄ±nde birleÅŸlÅŸtirme koÅŸulu belirten operatoru olan on gibi dusunun
+-- iÃ§inde germany,france ve uk olan jkayÄ±tlarÄ± getir
+--Select * from Customers Where Country In ('Germany','France','Uk')
+--beetwen kullanÄ±mÄ± BETWEEN operatÃ¶rÃ¼, belirli bir aralÄ±ktaki deÄŸerleri seÃ§er. DeÄŸerler sayÄ±, metin veya tarih olabilir.
+--BETWEEN operatÃ¶rÃ¼ kapsayÄ±cÄ±dÄ±r: baÅŸlangÄ±Ã§ â€‹â€‹ve bitiÅŸ deÄŸerleri dahildir.
+--Select * From Products Where UnitPrice Between 10 and 20
+--aliases sutunlarÄ± farklÄ± isimlendÅŸirmek iÃ§in kullanÄ±lÄ±r
+--select ProductName As urunismi from Products
+--varolan tabloya sutun eklemek
+--ALTER TABLE Products ADD islem VARCHAR(50) NOT NULL DEFAULT('ALÄ°CAN')
+--select * from Products
+--joÄ±nler
