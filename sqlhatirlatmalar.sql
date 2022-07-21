@@ -61,3 +61,33 @@ EXEC list*/
 --ALTER TABLE Products ADD islem VARCHAR(50) NOT NULL DEFAULT('ALİCAN')
 --select * from Products
 --joınler
+INNER) JOIN: Her iki tabloda da eşleşen değerlere sahip kayıtları döndürür
+LEFT (OUTER) JOIN: Soldaki tablodaki tüm kayıtları ve sağdaki tablodaki eşleşen kayıtları döndürür.
+RIGHT (OUTER) JOIN: Sağdaki tablodaki tüm kayıtları ve soldaki tablodaki eşleşen kayıtları döndürür.
+FULL (OUTER) JOIN: Sol veya sağ tabloda bir eşleşme olduğunda tüm kayıtları döndürür
+*/
+/*SELECT Orders.OrderID, Customers.CompanyName, Orders.OrderDate
+FROM Orders
+INNER JOIN Customers ON Orders.CustomerID=Customers.CustomerID;
+*/
+/*SELECT Customers.CompanyName, Orders.OrderID
+FROM Customers
+LEFT JOIN Orders ON Customers.CustomerID = Orders.CustomerID
+ORDER BY Customers.CompanyName;
+*/
+/*SELECT Orders.OrderID, Employees.LastName, Employees.FirstName
+FROM Orders
+RIGHT JOIN Employees ON Orders.EmployeeID = Employees.EmployeeID
+ORDER BY Orders.OrderID;
+*/
+/*SELECT Customers.CompanyName, Orders.OrderID
+FROM Customers
+FULL OUTER JOIN Orders ON Customers.CustomerID=Orders.CustomerID
+ORDER BY Customers.CompanyName;
+*/
+-- tablo kendisiyle birleşitirlir self joın
+/*SELECT A.CompanyName AS CustomerName1, B.CompanyName AS CustomerName2, A.City
+FROM Customers A, Customers B
+WHERE A.CustomerID <> B.CustomerID
+AND A.City = B.City
+ORDER BY A.City;*/
